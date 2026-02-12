@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>3D Golf Simulator Configurator</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header>
+      <h1>3D Golf Simulator Configurator</h1>
+      <p>Build a complete simulator setup live with your client and generate a quote-ready configuration.</p>
+    </header>
+
+    <main>
+      <section class="panel controls">
+        <h2>Client Configuration</h2>
+
+        <div class="grid">
+          <label>
+            Room Width (ft)
+            <input type="range" id="roomWidth" min="10" max="25" step="0.5" value="15" />
+            <span class="value" id="roomWidthValue">15.0</span>
+          </label>
+
+          <label>
+            Room Depth (ft)
+            <input type="range" id="roomDepth" min="12" max="35" step="0.5" value="20" />
+            <span class="value" id="roomDepthValue">20.0</span>
+          </label>
+
+          <label>
+            Ceiling Height (ft)
+            <input type="range" id="ceilingHeight" min="8" max="15" step="0.5" value="10" />
+            <span class="value" id="ceilingHeightValue">10.0</span>
+          </label>
+
+          <label>
+            Simulator Package
+            <select id="packageTier">
+              <option value="starter">Starter</option>
+              <option value="pro" selected>Pro</option>
+              <option value="elite">Elite</option>
+            </select>
+          </label>
+
+          <label>
+            Primary Handedness
+            <select id="handedness">
+              <option value="right" selected>Right-handed only</option>
+              <option value="left">Left-handed only</option>
+              <option value="both">Both (switch-friendly layout)</option>
+            </select>
+          </label>
+
+          <fieldset>
+            <legend>Add-ons</legend>
+            <label><input type="checkbox" id="addonTurf" checked /> Premium Turf Strip</label>
+            <label><input type="checkbox" id="addonCamera" checked /> Swing Camera Kit</label>
+            <label><input type="checkbox" id="addonLighting" /> Studio Lighting</label>
+            <label><input type="checkbox" id="addonSound" /> Surround Sound</label>
+          </fieldset>
+        </div>
+      </section>
+
+      <section class="panel viewport">
+        <div id="scene"></div>
+      </section>
+
+      <section class="panel summary">
+        <h2>Recommendation & Pricing</h2>
+        <ul id="recommendations"></ul>
+        <div class="total">
+          <span>Total Estimate</span>
+          <strong id="totalPrice">$0</strong>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <small>Tip: rotate and zoom with your mouse to explain fit, safety clearance, and upgrade options.</small>
+    </footer>
+
+    <script type="module" src="app.js"></script>
+  </body>
+</html>
